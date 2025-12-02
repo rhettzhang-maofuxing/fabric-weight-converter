@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric Weight Converter - Official F&B Fashion Utility</title>
+    <meta name="description" content="A lightweight, zero-dependency utility for precise fabric weight conversion between GSM and oz/yd².">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <style>
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        @media (max-width: 767px) {
+            body {
+                padding: 15px;
+            }
+        }
+        .markdown-body {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+        }
+    </style>
+</head>
+<body class="markdown-body">
+    <h1>Fabric Weight Converter</h1>
+
+    <p><strong>Official F&B Fashion Fabric Weight Tool</strong></p>
+
+    <p>A lightweight, zero-dependency utility for precise fabric weight conversion between <strong>GSM</strong> (Grams per Square Meter) and <strong>oz/yd²</strong> (Ounces per Square Yard).</p>
+
+    <h2>🛡️ Battle-Tested</h2>
+
+    <p>This tool was developed by the <strong>F&B Fashion</strong> team and is actively used on our independent e-commerce site and internal supply chain systems, ensuring absolute data accuracy and reliability.</p>
+
+    <h2>🚀 Features</h2>
+
+    <ul>
+        <li><strong>Extremely Lightweight & Zero Dependency</strong>: Fast installation, no bloat.</li>
+        <li><strong>Universal Compatibility</strong>: Supports both <strong>ESM</strong> (import) and <strong>CJS</strong> (require) modules.</li>
+        <li><strong>Type Safe</strong>: Written in <strong>TypeScript</strong> with complete type definitions.</li>
+        <li><strong>Adjustable Precision</strong>: Support for custom decimal places to meet different business needs.</li>
+    </ul>
+
+    <h2>📦 Installation</h2>
+
+    <div class="highlight highlight-source-shell"><pre>npm install fabric-weight-converter</pre></div>
+
+    <h2>💻 Usage</h2>
+
+    <h3>Import</h3>
+
+    <div class="highlight highlight-source-js"><pre><span class="pl-c">// ESM</span>
+<span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">gsmToOz</span><span class="pl-kos">,</span> <span class="pl-s1">ozToGsm</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'fabric-weight-converter'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// CommonJS</span>
+<span class="pl-k">const</span> <span class="pl-kos">{</span> <span class="pl-s1">gsmToOz</span><span class="pl-kos">,</span> <span class="pl-s1">ozToGsm</span> <span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'fabric-weight-converter'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+
+    <h3>Examples</h3>
+
+    <h4>Convert GSM to oz/yd²</h4>
+
+    <div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">gsmToOz</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'fabric-weight-converter'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Standard conversion (default precision: 2)</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-en">gsmToOz</span><span class="pl-kos">(</span><span class="pl-c1">300</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 8.85</span>
+
+<span class="pl-c">// Custom precision</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-en">gsmToOz</span><span class="pl-kos">(</span><span class="pl-c1">300</span><span class="pl-kos">,</span> <span class="pl-c1">4</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 8.8481</span></pre></div>
+
+    <h4>Convert oz/yd² to GSM</h4>
+
+    <div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">ozToGsm</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'fabric-weight-converter'</span><span class="pl-kos">;</span>
+
+<span class="pl-c">// Standard conversion (default precision: 1)</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-en">ozToGsm</span><span class="pl-kos">(</span><span class="pl-c1">8.85</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 300.1</span>
+
+<span class="pl-c">// Custom precision</span>
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-en">ozToGsm</span><span class="pl-kos">(</span><span class="pl-c1">8.85</span><span class="pl-kos">,</span> <span class="pl-c1">0</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 300</span></pre></div>
+
+    <h3>Aliases</h3>
+
+    <p>For the convenience of non-native English speakers and for faster typing, aliases for common Chinese units are provided:</p>
+
+    <ul>
+        <li><code>kToZ</code> (克 -&gt; 盅) is an alias for <code>gsmToOz</code></li>
+        <li><code>zToK</code> (盅 -&gt; 克) is an alias for <code>ozToGsm</code></li>
+    </ul>
+
+    <div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">kToZ</span><span class="pl-kos">,</span> <span class="pl-s1">zToK</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">'fabric-weight-converter'</span><span class="pl-kos">;</span>
+
+<span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-en">kToZ</span><span class="pl-kos">(</span><span class="pl-c1">300</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span> <span class="pl-c">// 8.85</span></pre></div>
+
+    <h2>📚 API Reference</h2>
+
+    <h3><code>gsmToOz(gsm: number, precision?: number): number</code></h3>
+
+    <p>Converts Grams per Square Meter to Ounces per Square Yard.</p>
+    <ul>
+        <li><code>gsm</code>: Weight value (g/m²)</li>
+        <li><code>precision</code>: Decimal places to round to (default: 2)</li>
+    </ul>
+
+    <h3><code>ozToGsm(oz: number, precision?: number): number</code></h3>
+
+    <p>Converts Ounces per Square Yard to Grams per Square Meter.</p>
+    <ul>
+        <li><code>oz</code>: Weight value (oz/yd²)</li>
+        <li><code>precision</code>: Decimal places to round to (default: 1)</li>
+    </ul>
+
+    <h2>🏭 About F&B Fashion (Your Professional Sportswear Manufacturer)</h2>
+
+    <p>This tool is provided to you by the <strong>F&B Fashion</strong> team.</p>
+
+    <p>We are a manufacturer focused on high-quality <strong>Sportswear</strong> production and export, providing global <strong>OEM/ODM</strong> (Original Equipment/Design Manufacturer) services. As frontline supply chain workers, we understand the importance of precise data in fabric sourcing and quality control, which is why we developed and open-sourced this tool.</p>
+
+    <p><strong>Looking for a reliable sportswear manufacturing partner?</strong><br>
+    Welcome to visit our official website to learn about our products and cooperation process:</p>
+
+    <p>👉 <strong>F&B Fashion Official Website</strong>: <a href="https://sportswearbridge.com/">https://sportswearbridge.com/</a></p>
+
+    <h2>📄 License</h2>
+
+    <p>MIT</p>
+</body>
+</html>
