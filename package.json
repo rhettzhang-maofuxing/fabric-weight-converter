@@ -1,0 +1,45 @@
+{
+  "name": "fabric-weight-converter",
+  "version": "1.0.1",
+  "description": "Official F&B Fashion Utility: A battle-tested tool for precise fabric weight (GSM <-> oz/yd²) conversion. Actively used on our e-commerce site (https://sportswearbridge.com/) and maintained by our team.",
+  "homepage": "https://sportswearbridge.com/",
+  "bugs": {
+    "url": "https://sportswearbridge.com/"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "fabric",
+    "weight",
+    "converter",
+    "gsm",
+    "ounce",
+    "textile",
+    "manufacturer utility",
+    "sportswear",
+    "fashion",
+    "utility"
+  ],
+  "author": "rhettzhang",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  }
+}

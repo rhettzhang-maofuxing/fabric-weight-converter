@@ -1,0 +1,2 @@
+var t=33.9057474;function o(e,r=2){if(e<0)throw new Error("Weight cannot be negative");let n=e/t;return Number(n.toFixed(r))}function u(e,r=1){if(e<0)throw new Error("Weight cannot be negative");let n=e*t;return Number(n.toFixed(r))}var b=o,i=u;export{o as gsmToOz,b as kToZ,u as ozToGsm,i as zToK};
+//# sourceMappingURL=index.js.map
